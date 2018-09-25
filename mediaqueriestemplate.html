@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!-- saved from url=(0070)https://chad-bennett.github.io/arts229/mediaQueries/mediaTemplate.html -->
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Media Queries Template</title>
+
+  <meta name="description" content="an experiment in creating different layouts and themes for different screen sizes">
+  <meta name="keywords" content="media query, layout, assignment">
+  <meta name="author" content="your name here">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- this viewport setting is important for responsive web design -->
+
+  <style>
+    body {
+      font-family: sans-serif;
+      color: #263948;
+      background: #E1B09D;
+      width: 80vw;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      width: 150px;
+      background-color: #263948;
+    }
+
+    li a {
+      display: block;
+      color: #E1B09D;
+      padding: 8px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      background-color: #E1B09D;
+      color: #263948;
+    }
+
+    h1 {
+      font-size: 2em;
+    }
+
+    figure {
+      width: 30vw;
+      float: right;
+    }
+
+    figure::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    figcaption {
+      text-align: center;
+      padding-top: 10px;
+    }
+
+    img {
+max-width:100%;
+height:auto;
+}
+
+    @media screen and (min-width: 600px) {
+      body {
+        color: #263948;
+        background: #E1B09D;
+      }
+
+      figure {
+        width: 25%;
+      }
+
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        max-width: 1200px;
+        overflow: hidden;
+        background-color: #263948;
+      }
+
+      li {
+        float: left;
+      }
+
+      li a {
+        text-align: center;
+        padding: 14px 16px;
+      }
+
+    }
+
+    @media screen and (min-width: 1200px) {
+      body {
+        color: #E1B09D;
+        background: #263948;
+      }
+
+      article {
+        float: left;
+        width: 70%;
+        margin-right: 5px;
+      }
+
+      aside {
+        float: left;
+        width: 50%;
+      }
+
+      figure {
+        float: left;
+      }
+
+      article::after, aside::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+
+
+section {
+  float: none;
+  clear: both;
+}
+
+    }
+  </style>
+
+</head>
+
+<body>
+  <header>
+    <h1>Celestial Bodies</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="https://chad-bennett.github.io/arts229/mediaQueries/mediaTemplate.html#">Home</a></li>
+      <li><a href="https://chad-bennett.github.io/arts229/mediaQueries/mediaTemplate.html#">About Us</a></li>
+      <li><a href="https://chad-bennett.github.io/arts229/mediaQueries/mediaTemplate.html#">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <article>
+    <h1>Among the Stars</h1>
+    <p>Humans have always had a fascination with the heavens. What is out there? Are there others like us? From the beginning we've developed stories to explain what we don't fully understand. Even still, our quest for answers often turns up short. The closer we get, the more questions we have. </p>
+  </article>
+
+  <aside>
+    <figure>
+      <img src="truecolormoontransparent.png" alt="true color moon" title="image" height="300px" width="300px">
+      <figcaption>True Color Moon</figcaption>
+    </figure>
+
+    <p>In the past all we had to rely on was the naked eye to witness the processes around us. Now we have technologies we never knew could exist aiding us in our studies of the cosmos. Over just a few short decades our knowledge of outer space is grown exponentially. And yet, there is so much to learn. </p>
+  </aside>
+
+  <section>
+    <h1>Searching for Answers</h1>
+    <p>Now the discovery of life outside our solar system isn't just a possibility, it's just barely out of reach. The scope of our knowledge is expanding and we are racing to keep up with it. Astronomers have their work cut out for them, fortunately they love their jobs.</p>
+
+    <blockquote>
+      “The universe is a pretty big place. If it’s just us, seems <br />like an awful waste of space.” - Carl Sagan
+    </blockquote>
+
+    <p>Although we may not find all the answers to life greatest questions, we can still learn so much. It may take several generations or just a few years, but eventually we will find what we are meant to know. Anything is possible if you set your mind to it, what we've accomplished so far should be proof of that.</p>
+
+
+
+  </section>
+
+  <footer>
+    <hr>
+    <p>
+      © Celestial Bodies
+    </p>
+  </footer>
+
+
+
+
+</body>
+
+</html>
