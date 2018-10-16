@@ -1,0 +1,402 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Drawlloween</title>
+  <link href="https://fonts.googleapis.com/css?family=Freckle+Face|Open+Sans" rel="stylesheet">
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 15px;
+
+    }
+
+    #header {
+      font-family: 'Freckle Face', cursive;
+      text-align: center;
+      color: orange;
+    }
+
+    h2 {
+      font-size: 50px;
+    }
+
+    p {
+      text-align: center;
+      padding-top: 20px;
+      padding-bottom: 30px;
+    }
+
+    ul {
+      text-align: center;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: black;
+    }
+
+    li {
+      display: inline;
+    }
+
+    li a {
+      display: inline-block;
+      color: orange;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 25px;
+    }
+
+    /* Change the link color to #111 (black) on hover */
+
+    li a:hover {
+      background-color: #111;
+    }
+
+    /* Here's where our carousel begins, with the main wrapper being
+    relatively positioned, so that our absolutely positioned items are
+    in the right place. */
+
+    .carousel-wrapper {
+      position: relative;
+      margin: 0 auto;
+      max-width: 800px;
+      max-height: 600px;
+    }
+
+      /* Our absolutely positioned carousel items span the width and
+      height of its parent. We're making them transparent by default so
+      that they fade in when we cycle through them using the arrow links. */
+      .carousel-item {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+        }
+
+        /* Did you notice the 50px left, right padding up above? It's so
+        we can position our arrow links! Each one will be 50px wide. Also,
+        I'm using empty links with a background image so that the links
+        look like arrows. Make sure you swap out that URL with an actual
+        URL so that your arrow links aren't just transparent rectangles. */
+        .arrow {
+        position: absolute;
+        top: 0;
+        display: block;
+        width: 50px;
+        height: 100%;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        background: url("http://haloxp.com/codepen/carousel-arrow-dark.png") 50% 50% / 20px no-repeat;}
+
+          /* Let's put our arrow to go back on the left. */
+          .arrow-prev {
+            left: 0;
+          }
+
+          /* And our arrow to go forward on the right. Since I'm using
+          the same arrow image for both my arrows, I'm rotating this one by
+          180 degrees so that it points in the right direction */
+          .arrow-next {
+            right: 0;
+            -webkit-transform: rotate(180deg);
+                    transform: rotate(180deg);
+          }
+        }
+
+        /* I really like how these carousel items look on a dark image
+        background, so if a .carousel-item div has the class 'light',
+        we'll make its text color white, and use a white arrow instad of
+        a dark gray one. Again, make sure this arrow image exists somewhere */
+        .light {
+          color: white;}
+
+          .arrow {
+            background: url("http://haloxp.com/codepen/carousel-arrow-light.png") 50% 50% / 20px no-repeat;
+          }
+        }
+
+        /* Let's use using some media queries to resize the arrows
+        on smaller devices.*/
+        @media (max-width: 480px) {
+          .arrow, &.light .arrow {
+            background-size: 10px;
+            background-position: 10px 50%;
+          }
+        }
+      }
+
+      /* Let's set our jump link targets display: none; so that we're not
+      making the browser jump to the top of the carousel whenever a user
+      clicks on one of our arrow links. This attribute selector will target
+      any element whose id starts with 'target-item'. */
+      [id^="target-item"] {
+        display: none;
+      }
+
+      /* So, up above we made all our carousel items transparent, which means
+      that on page-load, we'd have a big empty box where our carousel should be.
+      Let's set our first item's opacity to 1 so that it displays instead. Also,
+      we're setting its z-index to 2, so that it's positioned on top of the
+      other carousel items. */
+      .item-1 {
+        z-index: 2;
+        opacity: 1;
+      }
+
+      /* But we don't want the first item to ALAWYS be opacity: 1; otherwise
+      it would peek through when cycling between items two and above. */
+      *:target ~ .item-1 {
+        opacity: 0;
+      }
+
+      /* ...but if #target-item-1 is targeted, well we do want the first item
+      to show up, so we're selecting it with the ~ sibling selector and
+      setting its opacity to 1 again :-) */
+      #target-item-1:target ~ .item-1 {
+        opacity: 1;
+      }
+
+      /* If any other target-item-# is targeted, let's select it using the sibling
+      selector, make it fade in, and place it on top of the pile using z-index: 3.
+      Here's where you'd add more target items if your carousel has more than three
+      items. It might be worth adding like 10 items right off the bat. */
+      #target-item-2:target ~ .item-2, #target-item-3:target ~ .item-3 {
+        z-index: 3;
+        opacity: 1;
+      }
+
+      #target-item-3:target ~ .item-3, #target-item-4:target ~ .item-4 {
+        z-index: 3;
+        opacity: 1;
+      }
+
+      #target-item-4:target ~ .item-4, #target-item-5:target ~ .item-5 {
+        z-index: 3;
+        opacity: 1;
+      }
+
+      #target-item-5:target ~ .item-5, #target-item-6:target ~ .item-6 {
+        z-index: 3;
+        opacity: 1;
+      }
+
+      #target-item-6:target ~ .item-6, #target-item-7:target ~ .item-7 {
+        z-index: 3;
+        opacity: 1;
+      }
+
+      #target-item-7:target ~ .item-7, #target-item-8:target ~ .item-8 {
+        z-index: 3;
+        opacity: 1;
+      }
+
+      #target-item-8:target ~ .item-8, #target-item-9:target ~ .item-9 {
+        z-index: 3;
+        opacity: 1;
+      }
+
+      #target-item-9:target ~ .item-9, #target-item-10:target ~ .item-10 {
+        z-index: 3;
+        opacity: 1;
+      }
+
+      #target-item-10:target ~ .item-10, #target-item-11:target ~ .item-11 {
+        z-index: 3;
+        opacity: 1;
+      }
+
+      #target-item-11:target ~ .item-11, #target-item-12:target ~ .item-12 {
+        z-index: 3;
+        opacity: 1;
+      }
+
+      #target-item-12:target ~ .item-12, #target-item-13:target ~ .item-13 {
+        z-index: 3;
+        opacity: 1;
+      }
+
+      #target-item-13:target ~ .item-13, #target-item-14:target ~ .item-14 {
+        z-index: 3;
+        opacity: 1;
+      }
+
+      #target-item-14:target ~ .item-14, #target-item-15:target ~ .item-15 {
+        z-index: 3;
+        opacity: 1;
+      }
+
+      #target-item-15:target ~ .item-15, #target-item-1:target ~ .item-1 {
+        z-index: 3;
+        opacity: 1;
+      }
+
+    }
+
+
+  </style>
+</head>
+
+
+
+<body>
+
+  <div id="header">
+
+    <h2>Drawlloween</h2>
+
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#2018">2018</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+
+  </div>
+  <div>
+
+    <div>
+      <p>
+        Follow along to see what spooky things I come up with for Drawlloween 2018!
+      </p>
+    </div>
+
+    <div>
+
+<div class="carousel-wrapper" style="height: 600px;">
+
+  <span id="target-item-1"></span>
+  <span id="target-item-2"></span>
+  <span id="target-item-3"></span>
+  <span id="target-item-4"></span>
+  <span id="target-item-5"></span>
+  <span id="target-item-6"></span>
+  <span id="target-item-7"></span>
+  <span id="target-item-8"></span>
+  <span id="target-item-9"></span>
+  <span id="target-item-10"></span>
+  <span id="target-item-11"></span>
+  <span id="target-item-12"></span>
+  <span id="target-item-13"></span>
+  <span id="target-item-14"></span>
+  <span id="target-item-15"></span>
+
+  <div class="carousel-item item-1" style="background-color: pink;">
+
+    <img src="images/day1.jpg" alt="Day 1">
+    <a class="arrow arrow-prev" href="#target-item-15"></a>
+    <a class="arrow arrow-next" href="#target-item-2"></a>
+  </div>
+
+  <div class="carousel-item item-2" style="background-color: royalblue;">
+
+    <img src="images/day2.jpg" alt="Day 2">
+    <a class="arrow arrow-prev" href="#target-item-1"></a>
+    <a class="arrow arrow-next" href="#target-item-3"></a>
+  </div>
+
+  <div class="carousel-item item-3" style="background-color: blue;">
+
+    <img src="images/day3.jpg" alt="Day 3">
+    <a class="arrow arrow-prev" href="#target-item-2"></a>
+    <a class="arrow arrow-next" href="#target-item-4"></a>
+  </div>
+
+  <div class="carousel-item item-4" style="background-color: orange;">
+
+    <img src="images/day4.jpg" alt="Day 4">
+    <a class="arrow arrow-prev" href="#target-item-3"></a>
+    <a class="arrow arrow-next" href="#target-item-5"></a>
+  </div>
+
+  <div class="carousel-item item-5" style="background-color: green;">
+
+    <img src="images/day5.jpg" alt="Day 5">
+    <a class="arrow arrow-prev" href="#target-item-4"></a>
+    <a class="arrow arrow-next" href="#target-item-6"></a>
+  </div>
+
+  <div class="carousel-item item-6" style="background-color: pink;">
+
+    <img src="images/day6.jpg" alt="Day 6">
+    <a class="arrow arrow-prev" href="#target-item-5"></a>
+    <a class="arrow arrow-next" href="#target-item-7"></a>
+  </div>
+
+  <div class="carousel-item item-7" style="background-color: orange;">
+
+    <img src="images/day7.jpg" alt="Day 7">
+    <a class="arrow arrow-prev" href="#target-item-6"></a>
+    <a class="arrow arrow-next" href="#target-item-8"></a>
+  </div>
+
+  <div class="carousel-item item-8" style="background-color: gray;">
+
+    <img src="images/day8.jpg" alt="Day 8">
+    <a class="arrow arrow-prev" href="#target-item-7"></a>
+    <a class="arrow arrow-next" href="#target-item-9"></a>
+  </div>
+
+  <div class="carousel-item item-9" style="background-color: purple;">
+
+    <img src="images/day9.jpg" alt="Day 9">
+    <a class="arrow arrow-prev" href="#target-item-8"></a>
+    <a class="arrow arrow-next" href="#target-item-10"></a>
+  </div>
+
+  <div class="carousel-item item-10" style="background-color: red;">
+
+    <img src="images/day10.jpg" alt="Day 10">
+    <a class="arrow arrow-prev" href="#target-item-9"></a>
+    <a class="arrow arrow-next" href="#target-item-11"></a>
+  </div>
+
+  <div class="carousel-item item-11" style="background-color: yellow;">
+
+    <img src="images/day11.jpg" alt="Day 11">
+    <a class="arrow arrow-prev" href="#target-item-10"></a>
+    <a class="arrow arrow-next" href="#target-item-12"></a>
+  </div>
+
+  <div class="carousel-item item-12" style="background-color: blue;">
+
+    <img src="images/day12.jpg" alt="Day 12">
+    <a class="arrow arrow-prev" href="#target-item-11"></a>
+    <a class="arrow arrow-next" href="#target-item-13"></a>
+  </div>
+
+  <div class="carousel-item item-13" style="background-color: green;">
+
+    <img src="images/day13.jpg" alt="Day 13">
+    <a class="arrow arrow-prev" href="#target-item-12"></a>
+    <a class="arrow arrow-next" href="#target-item-14"></a>
+  </div>
+
+  <div class="carousel-item item-14" style="background-color: white;">
+
+    <img src="images/day14.jpg" alt="Day 14">
+    <a class="arrow arrow-prev" href="#target-item-13"></a>
+    <a class="arrow arrow-next" href="#target-item-15"></a>
+  </div>
+
+  <div class="carousel-item item-15" style="background-color: black;">
+
+    <img src="images/day15.jpg" alt="Day 15">
+    <a class="arrow arrow-prev" href="#target-item-14"></a>
+    <a class="arrow arrow-next" href="#target-item-1"></a>
+  </div>
+
+
+</div>
+
+    </div>
+
+</body>
+
+</html>
