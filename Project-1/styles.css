@@ -46,10 +46,10 @@ li a {
 /* Change the link color to #111 (black) on hover */
 
 li a:hover {
-  background-color: #111;
+    color: gray;
 }
 
-img {
+#thumbs {
   display: flex;
   max-height: 200px;
   max-width: 200px;
@@ -270,6 +270,25 @@ in the right place. */
   max-width: 1600px;
   width: 80%;
   margin: 0 auto;
+}
+
+.container {
+  margin: 0 auto;
+  width: 675px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.link1 {
+  color: #D88600;
+  font-size: 15px;
+  padding: 0px;
+  margin: 0px;
+  text-decoration: none;
+}
+
+.link1:hover {
+    color: gray;
 }
 
 /*
