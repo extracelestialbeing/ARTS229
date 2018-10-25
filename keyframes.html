@@ -1,0 +1,47 @@
+<!doctype html>
+
+<head>
+  <title>Animation</title>
+  <style>
+    /* The animation code */
+
+    @keyframes example {
+      0% {background-color: red;
+      transform:scale(1)}
+
+      25% {background-color: yellow;
+      transform:scale(1.5)}
+
+      50% {background-color: blue;
+      transform:scale(1)}
+
+      75% {background-color: orange;
+      transform:scale(1.5)}
+
+      100% {background-color: green;
+      transform:scale(1)}
+
+    }
+
+    /* The element to apply the animation to */
+
+    #box1 {
+      width: 100px;
+      height: 100px;
+      background-color: white;
+      animation-name: example;
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="box1">
+
+  </div>
+
+</body>
+
+</html>

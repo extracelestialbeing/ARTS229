@@ -1,4 +1,10 @@
-body {
+
+
+:root{
+--orange: #D88600;
+  }
+
+  body {
   background-color: black;
   color: white;
   font-family: 'Open Sans', sans-serif;
@@ -8,7 +14,7 @@ body {
 #header {
   font-family: 'Freckle Face', cursive;
   text-align: center;
-  color: #D88600;
+  color: var(--orange);
 }
 
 h2 {
@@ -36,7 +42,7 @@ li {
 
 li a {
   display: inline-block;
-  color: #D88600;
+  color: var(--orange);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -48,6 +54,8 @@ li a {
 li a:hover {
   color: gray;
 }
+
+
 
 #thumbs {
   display: flex;
@@ -248,7 +256,57 @@ in the right place. */
   opacity: 1;
 }
 
-#target-item-15:target~.item-15, #target-item-1:target~.item-1 {
+#target-item-15:target~.item-15, #target-item-16:target~.item-16 {
+  z-index: 3;
+  opacity: 1;
+}
+
+#target-item-16:target~.item-16, #target-item-17:target~.item-17 {
+  z-index: 3;
+  opacity: 1;
+}
+
+#target-item-17:target~.item-17, #target-item-18:target~.item-18 {
+  z-index: 3;
+  opacity: 1;
+}
+
+#target-item-18:target~.item-18, #target-item-19:target~.item-19 {
+  z-index: 3;
+  opacity: 1;
+}
+
+#target-item-19:target~.item-19, #target-item-20:target~.item-20 {
+  z-index: 3;
+  opacity: 1;
+}
+
+#target-item-20:target~.item-20, #target-item-21:target~.item-21 {
+  z-index: 3;
+  opacity: 1;
+}
+
+#target-item-21:target~.item-21, #target-item-22:target~.item-22 {
+  z-index: 3;
+  opacity: 1;
+}
+
+#target-item-22:target~.item-22, #target-item-23:target~.item-23 {
+  z-index: 3;
+  opacity: 1;
+}
+
+#target-item-23:target~.item-23, #target-item-24:target~.item-24 {
+  z-index: 3;
+  opacity: 1;
+}
+
+#target-item-24:target~.item-24, #target-item-25:target~.item-25 {
+  z-index: 3;
+  opacity: 1;
+}
+
+#target-item-25:target~.item-25, #target-item-1:target~.item-1 {
   z-index: 3;
   opacity: 1;
 }
@@ -282,7 +340,7 @@ in the right place. */
 }
 
 .link1 {
-  color: #D88600;
+  color: var(--orange);
   font-size: 15px;
   padding: 0px;
   margin: 0px;
@@ -295,7 +353,7 @@ in the right place. */
 
 .bounce {
   animation-name: BOUNCE;
-  animation-duration: 2s;
+  animation-duration: 4s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
@@ -307,22 +365,29 @@ in the right place. */
     bottom: 0;
   }
   to {
-    bottom: 20px;
+    bottom: 25px;
   }
+  0% {transform:scale(1)}
+  25% {transform:scale(1.15)}
+  50% {transform:scale(1)}
+  100% {transform:scale(1.15)}
 }
 
 @media screen and (max-width: 650px) {
   body {
     text-align: center;
   }
+
   .box {
     margin: 0 auto;
     text-align: center;
     width: 400px;
   }
+
   #header {
     text-align: center;
   }
+
   ul {
     text-align: center;
     list-style-type: none;
@@ -330,18 +395,15 @@ in the right place. */
     padding: 0;
     width: 200px;
   }
+
   li a {
     display: block;
     text-align: center;
     padding: 14px 16px;
   }
-  p {
-    text-align: center;
-    width: 375px;
-  }
-}
 
 }
+
 
 /*
   @media screen and (min-width: 900px) {
