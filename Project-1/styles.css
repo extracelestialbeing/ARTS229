@@ -306,7 +306,32 @@ in the right place. */
   opacity: 1;
 }
 
-#target-item-25:target~.item-25, #target-item-1:target~.item-1 {
+#target-item-25:target~.item-25, #target-item-26:target~.item-26 {
+  z-index: 3;
+  opacity: 1;
+}
+
+#target-item-26:target~.item-26, #target-item-27:target~.item-27 {
+  z-index: 3;
+  opacity: 1;
+}
+
+#target-item-27:target~.item-27, #target-item-28:target~.item-28 {
+  z-index: 3;
+  opacity: 1;
+}
+
+#target-item-28:target~.item-28, #target-item-29:target~.item-29 {
+  z-index: 3;
+  opacity: 1;
+}
+
+#target-item-29:target~.item-29, #target-item-30:target~.item-30 {
+  z-index: 3;
+  opacity: 1;
+}
+
+#target-item-30:target~.item-30, #target-item-1:target~.item-1 {
   z-index: 3;
   opacity: 1;
 }
