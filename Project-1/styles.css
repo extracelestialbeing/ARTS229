@@ -55,12 +55,36 @@ li a:hover {
 
 
 
-#thumbs {
+.thumbs {
   display: flex;
   max-height: 200px;
   max-width: 200px;
   padding: 50px;
 }
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  margin-top: 2%;
+}
+
+.lightbox:target {
+  outline: none;
+  display: block;
+}
+
 
 /* Here's where our carousel begins, with the main wrapper being
 relatively positioned, so that our absolutely positioned items are
