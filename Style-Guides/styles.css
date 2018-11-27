@@ -1,98 +1,68 @@
-/* /////////////////////////////////
-////////////////////////////////////
-////////////////////////////////////
-////////////////////////////////////
-////////////////////////////////////
-////////////////////////////////////
-
- STYLE GUIDE SETUP
-
- ////////////////////////////////////
- ////////////////////////////////////
- ////////////////////////////////////
- ////////////////////////////////////
- ////////////////////////////////////
-  //////////////////////////////// */
-
-
-  body {
-    font-family: 'Shadows Into Light', cursive;
-    font-family: 'Quicksand', sans-serif;
-    background-color: #F7F4EE;
-    color: #25201A;
-  }
-
-.sidebar {
-        grid-area: sidebar;
-    }
-
-    .content {
-        grid-area: content;
-    }
-
-    .header {
-        grid-area: header;
-    }
-
-
-
-
-    .wrapper {
-        display: grid;
-        grid-gap: 20px;
-        grid-template-columns: 150px 475px 400px;
-        grid-template-areas:
-    "header header header"
-        "content content sidebar";
-    }
-
-
-.box {
-  padding: 15px;
+body {
+  font-family: 'Shadows Into Light', cursive;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #F7F4EE;
+  color: #25201A;
 }
 
-.header {
+.wrapper {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 150px 475px 400px;
+  grid-template-areas: "header header header" "content content sidebar";
+}
 
-  }
+aside {
+  grid-area: sidebar;
+  padding-top: 15px;
+}
+
+.content {
+  grid-area: content;
+}
+
+header {
+  grid-area: header;
+}
+
+.box {
+  padding: 14px;
+}
+
+nav {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #F7F4EE;
+}
+
+li {
+  display: inline;
+}
+
+li a {
+  display: inline-block;
+  color: black;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 25px;
+}
 
 
-  .nav {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-  }
-
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #F7F4EE;
-  }
-
-  li {
-    display: inline;
-  }
-
-  li a {
-    display: inline-block;
-    color: black;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 25px;
-  }
-
-  /* Change the link color to #111 (black) on hover */
-
-  li a:hover {
-    color: #A59D92;
-  }
-
+li a:hover {
+  color: #A59D92;
+}
 
 * {
   box-sizing: border-box;
-  /* Calculates padding and border independently of the height */
 }
 
 main {
@@ -110,13 +80,13 @@ section * {
   margin-bottom: 20px;
 }
 
-
-
 .title {
-  margin-bottom: 5vh;
+  margin-bottom: 2vh;
   font-family: 'Shadows Into Light', cursive;
   font-size: 40px;
   font-weight: 800;
+  padding-left: 15px;
+  color: #463B2E;
 }
 
 .subtitle {
@@ -126,15 +96,18 @@ section * {
   font-size: 30px;
   font-weight: 600;
   border-bottom: 2px dashed #A59D92;
+  color: #463B2E;
 }
 
-.paragraph {
-    font-family: 'Quicksand', sans-serif;
-    margin-bottom: 30px;
+p {
+  font-family: 'Quicksand', sans-serif;
+  margin-bottom: 5px;
+  padding-left: 15px;
 }
 
 .color_grid {
-  display: flex; flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .circle {
@@ -143,7 +116,7 @@ section * {
   position: relative;
   margin: 0 20px 50px 0;
   border-radius: 50%;
-  box-shadow: 0 0 10px rgba(0,0,0,.1) inset;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1) inset;
 }
 
 .circle:after {
@@ -152,7 +125,6 @@ section * {
   width: 100%;
   bottom: -20px;
   text-align: center;
-
   font-size: 12px;
   font-weight: 600;
   color: #bcbcbc;
@@ -165,8 +137,8 @@ img {
 }
 
 .container {
-    position: relative;
-    width: 100%;
+  position: relative;
+  width: 100%;
 }
 
 .middle {
@@ -189,225 +161,124 @@ img {
 }
 
 
-@media (min-width: 800px) {
-
-  main {
-    max-width: 1000px;
-  }
-
-  .circle {
-    width: 130px;
-    height: 130px;
-    position: relative;
-    margin: 0 20px 50px 0;
-    border-radius: 50%;
-    box-shadow: 0 0 10px rgba(0,0,0,.1) inset;
-  }
-}
-
-@media (max-width: 800px) {
-  .wrapper {
-      display: grid;
-      grid-gap: 10px;
-      grid-template-columns: 500px;
-      grid-template-areas:
-      "header"
-      "content"
-      "sidebar";
-  }
-.paragraph {
-  max-width: 450px;
-}
-
-}
-
-
 /* /////////////////////////////////
 COLOURS ////////////////////////////
 ////////////////////////////////////
 
-Example:
 
-.color_1 {
-  background: #469CFF;
-}
-.color_1:after {
-  content:'#469CFF';
-}
 
 */
 
 .color_1 {
   background: #1F4D2B;
 }
+
 .color_1:after {
-  content:'#1F4D2B';
+  content: '#1F4D2B';
 }
 
 .color_2 {
   background: #7BA686;
 }
+
 .color_2:after {
-  content:'#7BA686';
+  content: '#7BA686';
 }
 
 .color_3 {
   background: #463B2E;
 }
+
 .color_3:after {
-  content:'#463B2E';
+  content: '#463B2E';
 }
 
 .color_4 {
   background: #937F69;
 }
+
 .color_4:after {
-  content:'#937F69';
+  content: '#937F69';
 }
 
 .color_5 {
   background: #25201A;
 }
+
 .color_5:after {
-  content:'#25201A';
+  content: '#25201A';
 }
 
 .color_6 {
   background: #F7F4EE;
 }
+
 .color_6:after {
-  content:'#F7F4EE';
+  content: '#F7F4EE';
 }
 
 .color_7 {
   background: #A59D92;
 }
+
 .color_7:after {
-  content:'#A59D92';
+  content: '#A59D92';
 }
 
 .color_8 {
   background: #515D54;
 }
+
 .color_8:after {
-  content:'#515D54';
+  content: '#515D54';
 }
-
-
 
 /* MOBILE (DEFAULT) STYLES */
 
-
-  .h1 {
-    font-family: 'Shadows Into Light', cursive;
-    font-size: 30px;
-    font-weight: 500;
-  }
-
-  .h2 {
-    font-family: 'Shadows Into Light', cursive;
-    font-size: 25px;
-    font-weight: 400;
-  }
-
-  .h3 {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 20px;
-    font-weight: 300;
-  }
-
+h1 {
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 30px;
+  font-weight: 500;
 }
 
-
-
-
-
-.paragraph {
-    font-family: 'Quicksand', sans-serif;
-    margin-bottom: 30px;
+h2 {
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 25px;
+  font-weight: 400;
 }
 
-/* Defines bold text within para */
-.para strong {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: bold;
+h3 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
 }
 
-/* Defines emphasis text within para */
-.para em {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: italic;
+p {
+  font-family: 'Quicksand', sans-serif;
+  margin-bottom: 30px;
 }
 
-.link {
-
+strong {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
 }
+
+em {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: italic;
+}
+
+.link {}
 
 .blockquote {
-
+  padding-left: 50px;
+  padding-right: 50px;
 }
-
-/* DESKTOP STYLES */
-
-@media (min-width: 800px) {
-
-  .h1 {
-
-
-  }
-
-  .h2 {
-
-  }
-
-  .h3 {
-
-  }
-
-
-
-  .paragraph {
-
-
-  }
-
-  .paragraph strong {
-
-  }
-
-  .paragraph em {
-
-  }
-
-  .link {
-
-  }
-
-  .blockquote {
-
-  }
-
-}
-
 
 /* /////////////////////////////////
 ELEMENTS ///////////////////////////
 ////////////////////////////////////
 
-Example:
-
-.button {
-  padding: 10px 10px 10px 10px; (top, right, bottom, left)
-  height: 40px;
-  width: 120px;
-  font-family: arial, sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  color: white;
-  background: #469CFF;
-  border-radius: 3px;
-  transition: .2s;
-}
 
 */
 
@@ -423,12 +294,11 @@ Example:
   font-family: 'Quicksand', sans-serif;
   font-weight: bold;
   color: #7BA686;
-
 }
 
 .button_2 {
-  padding: 10px 10px 10px 10px; (top, right, bottom, left)
-  height: 40px;
+  padding: 10px 10px 10px 10px;
+  (top, right, bottom, left) height: 40px;
   width: 120px;
   font-family: 'Quicksand', sans-serif;
   color: white;
@@ -439,55 +309,60 @@ Example:
 }
 
 .button_2:hover {
-font-family: 'Quicksand', sans-serif;
-color: white;
-background: #7BA686;
+  font-family: 'Quicksand', sans-serif;
+  color: white;
+  background: #7BA686;
 }
 
 .button_3 {
-  padding: 10px 10px 10px 10px; (top, right, bottom, left)
-  height: 40px;
+  padding: 10px 10px 10px 10px;
+  (top, right, bottom, left) height: 40px;
   width: 120px;
-font-family: 'Quicksand', sans-serif;
-color: white;
-background: #463B2E;
-border-radius: 3px;
-transition: .2s;
-text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  color: white;
+  background: #463B2E;
+  border-radius: 3px;
+  transition: .2s;
+  text-align: center;
 }
 
 .button_3:hover {
-font-family: 'Quicksand', sans-serif;
-color: white;
-background: #937F69;
-
+  font-family: 'Quicksand', sans-serif;
+  color: white;
+  background: #937F69;
 }
 
-/* DESKTOP STYLES  */
+/* /////////////////////////////////
+MEDIA QUERIES ///////////////////////////
+////////////////////////////////////
+
+
+*/
+
 
 @media (min-width: 800px) {
+  main {
+    max-width: 1000px;
+  }
+  .circle {
+    width: 130px;
+    height: 130px;
+    position: relative;
+    margin: 0 20px 50px 0;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1) inset;
+  }
+}
 
-  .button_1 {
-
+@media (max-width: 800px) {
+  .wrapper {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 500px;
+    grid-template-areas: "header" "content" "sidebar";
   }
 
-  .button_1:hover {
-
-  }
-
-  .button_2 {
-
-  }
-
-  .button_2:hover {
-
-  }
-
-  .button_3 {
-
-  }
-
-  .button_3:hover {
-
+  p {
+    max-width: 450px;
   }
 }
