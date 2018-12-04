@@ -5,11 +5,16 @@ body {
   color: #25201A;
 }
 
+
+
 .wrapper {
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: 75% 25%;
-  grid-template-areas: "header header" "content sidebar";
+  grid-template-columns: 100%;
+  grid-template-areas: "header" "content" "sidebar";
+  width: 100%;
+  margin: 5vh auto;
+  padding-bottom: 8vh;
 }
 
 aside {
@@ -17,42 +22,11 @@ aside {
   padding: 15px;
 }
 
-.about {
-  margin-bottom: 0;
-
-}
-
-.postcontent1 {
-  float: left;
-  margin-bottom: 80px;
-}
-
-.imageleft {
-  margin-right: 80px;
-  float: left;
-}
-
-.postcontent2 {
-  float: right;
-  margin-right: 80px;
-  margin-bottom: 100px;
-}
-
-.imageright {
-  float: right;
-}
-
-.image {
-  margin-bottom: 15px;
-  max-width: 300px;
-}
-
-
-
 img {
-
   padding: 5px;
   border: 2px dashed #A59D92;
+  width: 100%;
+    max-width: 300px;
 }
 
 .content {
@@ -71,10 +45,10 @@ nav {
   padding-top: 20px;
   padding-bottom: 20px;
   margin-top: 50px;
-  margin-bottom: 50px;
+
 }
 
-ul {
+nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -88,7 +62,7 @@ li {
 
 li a {
   display: inline-block;
-  color: black;
+  color: #25201A;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 25px;
@@ -99,17 +73,25 @@ li a:hover {
   color: #A59D92;
 }
 
+a {text-decoration: none;
+color: #25201A;}
+
+a:hover {
+  color: #A59D92;
+}
+
+
 * {
   box-sizing: border-box;
 }
-
+/*
 main {
   width: 100%;
   max-width: 450px;
   margin: 5vh auto;
   padding-bottom: 8vh;
 }
-
+*/
 section {
   margin-bottom: 8vh;
 }
@@ -117,6 +99,41 @@ section {
 section * {
   margin-bottom: 20px;
 }
+
+.about {
+  margin-bottom: 0;
+}
+
+
+.postcontent1 {
+  float: none;
+  margin-bottom: 25px;
+}
+
+.imageleft {
+  margin-bottom: 25px;
+  float: none;
+}
+
+.postcontent2 {
+  float: none;
+  margin-bottom: 25px;
+}
+
+.imageright {
+  float: none;
+  margin-bottom: 25px;
+}
+
+.image {
+  margin-bottom: 15px;
+  max-width: 300px;
+}
+
+.posts {width: 100%;}
+
+
+
 
 .title {
   margin-bottom: 2vh;
@@ -141,6 +158,7 @@ p {
   font-family: 'Quicksand', sans-serif;
   margin-bottom: 5px;
   padding-left: 15px;
+  max-width: 300px;
 }
 
 
@@ -149,39 +167,21 @@ p {
   max-width: 300px;
 }
 
+.supplies {max-width: 250px;
+list-style: disc;}
+
+.supplies li {
+  list-style-type: disc;
+  display: block;
+  padding: 0;
+  margin-bottom: 10px;
+}
 
 .grid {
   display: flex;
   flex-wrap: wrap;
   space-between: 10px;
 }
-
-.color_grid {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.circle {
-  width: 90px;
-  height: 90px;
-  position: relative;
-  margin: 0 20px 50px 0;
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, .1) inset;
-}
-
-.circle:after {
-  display: block;
-  position: absolute;
-  width: 100%;
-  bottom: -20px;
-  text-align: center;
-  font-size: 12px;
-  font-weight: 600;
-  color: #bcbcbc;
-  letter-spacing: 1px;
-}
-
 
 .container {
   position: relative;
@@ -385,25 +385,56 @@ MEDIA QUERIES ///////////////////////////
 */
 
 
-@media (min-width: 800px) {
-  main {
+@media (min-width: 1000px) {
+  .wrapper {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: auto 250px;
+    grid-template-areas: "header header" "content sidebar";
     max-width: 1000px;
   }
-  .circle {
-    width: 130px;
-    height: 130px;
-    position: relative;
-    margin: 0 20px 50px 0;
-    border-radius: 50%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1) inset;
-  }
-}
 
-@media (max-width: 800px) {
+  img {max-width: 300px;}
+
+  .postcontent1 {
+    float: left;
+    margin-bottom: 80px;
+  }
+
+  .imageleft {
+    margin-right: 80px;
+    float: left;
+  }
+
+  .postcontent2 {
+    float: right;
+    margin-right: 80px;
+    margin-bottom: 100px;
+  }
+
+  .imageright {
+    float: right;
+  }
+
+  .posts::after, .postcontent1::after, .imageleft::after, .postcontent2::after, .imageright::after {
+    float: none;
+    clear: both;
+    }
+
+  .space {max-height: 0px;
+    padding: 120px;}
+
+    .bloglinks {
+      margin-top: 75px;
+      border-bottom: 2px dashed #A59D92;
+    }
+}
+/*
+@media (max-width: 1000px) {
   .wrapper {
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: 500px;
+    grid-template-columns: 1000px;
     grid-template-areas: "header" "content" "sidebar";
   }
 
