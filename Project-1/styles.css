@@ -106,7 +106,7 @@ in the right place. */
 .carousel-item {
   position: absolute;
   width: 80%;
-margin: 0 auto;
+  margin: 0 auto;
   top: 0;
   bottom: 0;
   left: 0;
